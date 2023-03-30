@@ -1,0 +1,20 @@
+﻿#include <iostream>
+using namespace std;
+
+int main() {
+    int i, j, n, sum, total = 0;
+    cout << "Enter the value for nth term: ";
+    cin >> n;
+    for (i = 1; i <= n; i++) {
+        sum = 0;
+        for (j = 1; j <= i; j++) {
+            total += j;
+            sum += j;
+            cout << j;
+            if (j < i) {
+                cout << "+";
+            }
+        }
+        cout << " = " << sum << endl;
+    }
+    cout << "\nThe s
