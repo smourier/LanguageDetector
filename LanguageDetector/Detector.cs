@@ -23,7 +23,7 @@ namespace LanguageDetector
                 if (i == text.Length)
                     break;
 
-                if (token.Length > 1 && token.StartsWith('<'))
+                if (token.Length > 1 && token.StartsWith("<"))
                 {
                     if (token.IndexOf(':', 2) > 0)
                     {
@@ -84,7 +84,7 @@ namespace LanguageDetector
                         i++;
                     }
 
-                    if (sb.Length > 0 && isEndChar(sb[^1]))
+                    if (sb.Length > 0 && isEndChar(sb[sb.Length - 1]))
                         return sb.ToString(0, sb.Length - 1);
 
                     return sb.ToString();
@@ -105,7 +105,7 @@ namespace LanguageDetector
 
             void addScore(LanguageScore ls)
             {
-                if (!languageBuckets!.TryGetValue(ls.Language, out var initial))
+                if (!languageBuckets.TryGetValue(ls.Language, out var initial))
                 {
                     languageBuckets[ls.Language] = ls.Score;
                     return;
